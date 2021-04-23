@@ -17,12 +17,12 @@ for img in os.listdir(path):
 
     resizeImg = im.resize((round(im.size[0]*0.5), round(im.size[1]*0.5)))
     rename =  intPath + img.split('.')[0] + "x" + ".png"
-    resizeImg.save(rename, optimize=True,quality=95)
+    resizeImg.save(rename, optimize=True,quality=100)
     resizeImg.show()
 
     cropImg = resizeImg.crop((left, top, right, bottom))
     rename =  img.split('.')[0] + "y" + ".png"
-    cropImg.save(newPath+rename, optimize=True,quality=75)
+    cropImg.save(newPath+rename, optimize=True,quality=100)
     cropImg.show()
 
     finalImg = cropImg.resize((160, 300), Image.ANTIALIAS)
