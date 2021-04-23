@@ -25,4 +25,4 @@ for img in os.listdir(SRC):
 
     rename =  img.split('.')[0] + "z" + ".png"
     
-    finalImg.save(DES + rename, optimize=True)
+    finalImg.save(DES + rename, optimize=True, quality=95)
