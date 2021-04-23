@@ -1,9 +1,10 @@
 import os
 from PIL import Image
 
-path = "./SampleData/"
-newPath = "./cropData/"
-intPath = "./resizeData/"
+path = "/home/mamatha/Desktop/SampleData/"
+newPath = "/home/mamatha/Desktop/cropData/"
+intPath = "/home/mamatha/Desktop/resizeData/"
+finalPath = "/home/mamatha/Desktop/final/"
 left = 360
 top = 10
 right = 600
@@ -24,4 +25,7 @@ for img in os.listdir(path):
     cropImg.save(newPath+rename, optimize=True,quality=75)
     cropImg.show()
 
-
+    finalImg = cropImg.resize((160, 300), Image.ANTIALIAS)
+    rename =  img.split('.')[0] + "z" + ".png"
+    finalImg.save(finalPath + rename, optimize=True, quality=95)
+    finalImg.show()
